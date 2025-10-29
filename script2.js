@@ -1,8 +1,8 @@
 // Room prices and details
 const roomPrices = {
-    "Couple's Nest": 80,
-    "Mountain View Suite": 150,
-    "Group Lodge": 220
+    "Couple's Nest": 6800,
+    "Mountain View Suite": 8000,
+    "Group Lodge": 22000
 };
 
 // Set minimum date to today
@@ -53,13 +53,14 @@ function filterRooms(numberOfPeople) {
         let roomName;
         if (people <= 2) {
             roomName = "Couple's Nest";
-            roomInput.value = `${roomName} (2 People - $80/Day)`;
+            roomInput.value = `${roomName} (2 People - ₹6800/Day)`;
         } else if (people <= 4) {
             roomName = "Mountain View Suite";
-            roomInput.value = `${roomName} (4 People - $150/Day)`;
+            roomInput.value = `${roomName} (4 People - ₹8000/Day)`;
         } else if (people <= 6) {
             roomName = "Group Lodge";
-            roomInput.value = `${roomName} (6 People - $220/Day)`;
+            roomInput.value = `${roomName} (6 People - ₹22000/Day)`;
+
         } else {
             roomInput.value = "Contact us for custom arrangements";
             message.textContent = "We recommend contacting us for groups larger than 6.";

@@ -1,0 +1,22 @@
+*{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{margin:0;background:#f5f7fb;color:#123;padding:24px}
+header{max-width:1000px;margin:0 auto 18px}
+header h1{margin:0 0 6px;font-size:1.6rem}
+header p{margin:0;color:#345}
+main{max-width:1100px;margin:14px auto;background:#fff;padding:18px;border-radius:10px;box-shadow:0 8px 30px rgba(12,30,60,0.06)}
+.input label{display:block;margin-bottom:8px;font-weight:600}
+#html-input{width:100%;padding:12px;border:1px solid #d5dbe6;border-radius:8px;font-family:monospace;background:#fbfdff}
+.controls{margin-top:12px;display:flex;gap:10px}
+.btn{background:#2f80ed;color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+.btn.alt{background:#6c757d}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.score-box{background:linear-gradient(0deg,#ffffff,#fbfcff);padding:14px;border-radius:8px;border:1px solid #ecf0f3}
+.big-score{font-size:2.6rem;font-weight:800;color:#0b61d6}
+.breakdown{margin-top:8px;font-size:0.9rem;color:#234}
+.analysis{margin-top:16px}
+.recommendations li{margin-bottom:8px}
+.raw{margin-top:14px;background:#0b1220;color:#dff;font-family:monospace;padding:12px;border-radius:6px}
+#raw-output{white-space:pre-wrap;max-height:260px;overflow:auto}
+footer{max-width:1100px;margin:18px auto;color:#556}
+.hidden{display:none}
+@media(max-width:640px){.big-score{font-size:2rem;padding-bottom:6px}}

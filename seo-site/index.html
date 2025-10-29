@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEO + AEO Audit Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SEO + AEO Audit Tool</h1>
+    <p>Paste a page's HTML (or its &lt;head&gt; section) below and click "Analyze". This is a client-side auditor — no external requests are made.</p>
+  </header>
+
+  <main>
+    <section class="input">
+      <label for="html-input">Paste page HTML or head HTML</label>
+      <textarea id="html-input" placeholder="Paste full HTML or head content here..." rows="12"></textarea>
+
+      <div class="controls">
+        <button id="analyzeBtn" class="btn">Analyze</button>
+        <button id="exampleBtn" class="btn alt">Load Example HTML</button>
+      </div>
+    </section>
+
+    <section id="results" hidden>
+      <div class="scores">
+        <div class="score-box">
+          <h2>SEO Score</h2>
+          <div id="seo-score" class="big-score">—</div>
+          <div id="seo-breakdown" class="breakdown"></div>
+        </div>
+
+        <div class="score-box">
+          <h2>AEO Score</h2>
+          <div id="aeo-score" class="big-score">—</div>
+          <div id="aeo-breakdown" class="breakdown"></div>
+        </div>
+
+        <div class="score-box">
+          <h2>Accessibility</h2>
+          <div id="acc-score" class="big-score">—</div>
+          <div id="acc-breakdown" class="breakdown"></div>
+        </div>
+      </div>
+
+      <div class="analysis">
+        <h3>Recommendations</h3>
+        <ul id="recommendations"></ul>
+      </div>
+
+      <div class="raw">
+        <h3>Raw Findings</h3>
+        <pre id="raw-output"></pre>
+      </div>
+
+      <div class="controls">
+        <button id="backBtn" class="btn">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Local tool — no data leaves your browser. For remote URL audits you need a server fetch (see README).</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

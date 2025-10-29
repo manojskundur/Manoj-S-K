@@ -1,83 +1,149 @@
-/* Global layout + typography */
-:root{
-	--accent-1:#055e89;
-	--accent-2:#0c3d56;
-	--card-bg: rgba(255,255,255,0.92);
-}
-html,body{height:100%;}
-body{
-	font-family: Arial, Helvetica, sans-serif;
-	margin:0;
-	color:#072b36;
-	background-color:#f7f9fa;
-	-webkit-font-smoothing:antialiased;
-	-moz-osx-font-smoothing:grayscale;
-}
-
-/* Page-specific backgrounds use a layered background: gradient overlay + image */
-body.home{
-	background-image:
-		linear-gradient(rgba(3,34,48,0.45), rgba(3,34,48,0.45)),
-		url('https://images.unsplash.com/photo-1502920917128-1aa500764b52?auto=format&fit=crop&w=1600&q=60');
-	background-size:cover;
-	background-position:center center;
-	background-attachment: fixed;
-	color: #fff;
-}
-
-body.vehicles{
-	background-image:
-		linear-gradient(rgba(4,20,34,0.45), rgba(4,20,34,0.45)),
-		url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=60');
-	background-size:cover;
-	background-position:center center;
-	background-attachment: fixed;
-	color: #fff;
-}
-
-body.stays{
-	background-image:
-		linear-gradient(rgba(10,30,20,0.45), rgba(10,30,20,0.45)),
-		url('https://images.unsplash.com/photo-1505691723518-36a5b8b0b3b8?auto=format&fit=crop&w=1600&q=60');
-	background-size:cover;
-	background-position:center center;
-	background-attachment: fixed;
-	color: #fff;
-}
-
-/* page container to keep content readable and centered */
-.container{max-width:1100px;margin:0 auto;padding:28px;}
-
-/* Navigation */
-nav{background: linear-gradient(90deg,var(--accent-2), rgba(10,60,90,0.85));}
-nav ul{display:flex;list-style:none;margin:0;padding:0;align-items:center}
-nav ul li{margin:0}
-nav ul li a{color:#fff;text-decoration:none;padding:12px 16px;display:block}
-nav ul li a:hover{background:rgba(255,255,255,0.06)}
-
-/* Tables and forms */
-table{border-collapse:collapse;width:100%;max-width:900px;margin:18px 0;background:rgba(255,255,255,0.92);border-radius:6px;overflow:hidden}
-th, td{padding:12px 16px;border-bottom:1px solid #e6eef2;color:#07323a}
-th{background:var(--accent-1);color:#fff;text-align:left}
-
-form{background:var(--card-bg);padding:18px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);max-width:640px}
-input, select{display:block;width:100%;padding:8px 10px;margin:8px 0;border:1px solid #d0e6ee;border-radius:6px}
-input[type="number"]{max-width:160px}
-label{font-weight:600;margin-top:6px}
-
-/* Buttons */
-input[type="submit"], input[type="button"]{background:var(--accent-1);color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer}
-input[type="submit"]:hover,input[type="button"]:hover{background:var(--accent-2)}
-
-/* Amount span styling */
-#vehicleamt,#stayamt{font-weight:700;margin-left:6px}
-
-/* Small screen adjustments */
-@media (max-width:700px){
-	.container{padding:18px}
-	table, form{width:100%}
-	nav ul{flex-wrap:wrap}
-}
-
-/* Accessibility fallbacks in case external images don't load */
-body.home, body.vehicles, body.stays{background-color:#dbeef6}
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url("mountain.jpg") no-repeat center center/cover;
+    color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(50,100,80,0.7); 
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  .left, .center, .right {
+    flex: 1;
+  }
+  
+  /* Center text alignment */
+  .center {
+    text-align: center;
+  }
+  
+  /* Left and right are already aligned by default */
+  .left {
+    text-align: left;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #f4d03f;
+  }
+  header h4 {
+    margin-left: auto;
+    font-size: 16px;
+    color: #da5b24;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+  }
+  
+  .card {
+    background: rgba(0,0,0,0.75);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    margin: 0.5rem 0;
+    color: #f4d03f;
+  }
+  
+  .btn {
+    background: #f4d03f;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    background: #d4ac0d;
+  }
+  
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .popup-content input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+.close-btn {
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    float: right;
+    font-size: 20px;
+  }
+  .fixed-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    /* Removed text-align: center; as flexbox will handle alignment */
+    z-index: 1000;
+  }
+  
+  .contact-info {
+    display: flex;
+    justify-content: space-between; /* This is the key change */
+    align-items: center; /* Vertically aligns the items */
+    max-width: 1200px; /* Optional: Sets a max-width for better readability on large screens */
+    margin: 0 auto; /* Optional: Centers the container */
+  }
+  
+  .contact-info span {
+    font-size: 1.1em;
+  }
+  
+  body {
+    padding-bottom: 60px; /* Adjust this value to match the height of your nav bar */
+  }
