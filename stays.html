@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Stay Rentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="stays">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vehicles.html">Vehicles</a></li>
+            <li><a href="stays.html">Stays</a></li>
+        </ul>
+    </nav>
+    <h2>Stays</h2>
+    <table>
+        <tr><th>Type</th><th>Name</th><th>Price/Day</th></tr>
+        <tr><td>Home Stay</td><td>Hillside Home</td><td>₹2,500</td></tr>
+        <tr><td>Lodge</td><td>City Lodge</td><td>₹1,500</td></tr>
+    </table>
+    <h3>Book a Stay</h3>
+    <form action="submit_stay_booking.php" method="post">
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Members: <input type="number" name="members" required><br>
+        Stay: 
+        <select name="stay">
+            <option value="Hillside Home">Hillside Home</option>
+            <option value="City Lodge">City Lodge</option>
+        </select><br>
+        Days: <input type="number" name="days" id="staydays" min="1" required><br>
+        <input type="button" value="Calculate" onclick="calcStayAmount()">
+        Amount: <span id="stayamt">0</span> <br>
+        <input type="submit" value="Book">
+    </form>
+    <script>
+        const stayPrices = {"Hillside Home":2500,"City Lodge":1500};
+        function calcStayAmount() {
+            let stay = document.querySelector('select[name="stay"]').value;
+            let days = document.getElementById('staydays').value;
+            let amt = stayPrices[stay] * days;
+            document.getElementById('stayamt').textContent = amt;
+        }
+    </script>
+</body>
+</html>

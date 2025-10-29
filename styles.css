@@ -1,0 +1,83 @@
+/* Global layout + typography */
+:root{
+	--accent-1:#055e89;
+	--accent-2:#0c3d56;
+	--card-bg: rgba(255,255,255,0.92);
+}
+html,body{height:100%;}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	margin:0;
+	color:#072b36;
+	background-color:#f7f9fa;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+/* Page-specific backgrounds use a layered background: gradient overlay + image */
+body.home{
+	background-image:
+		linear-gradient(rgba(3,34,48,0.45), rgba(3,34,48,0.45)),
+		url('https://images.unsplash.com/photo-1502920917128-1aa500764b52?auto=format&fit=crop&w=1600&q=60');
+	background-size:cover;
+	background-position:center center;
+	background-attachment: fixed;
+	color: #fff;
+}
+
+body.vehicles{
+	background-image:
+		linear-gradient(rgba(4,20,34,0.45), rgba(4,20,34,0.45)),
+		url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1600&q=60');
+	background-size:cover;
+	background-position:center center;
+	background-attachment: fixed;
+	color: #fff;
+}
+
+body.stays{
+	background-image:
+		linear-gradient(rgba(10,30,20,0.45), rgba(10,30,20,0.45)),
+		url('https://images.unsplash.com/photo-1505691723518-36a5b8b0b3b8?auto=format&fit=crop&w=1600&q=60');
+	background-size:cover;
+	background-position:center center;
+	background-attachment: fixed;
+	color: #fff;
+}
+
+/* page container to keep content readable and centered */
+.container{max-width:1100px;margin:0 auto;padding:28px;}
+
+/* Navigation */
+nav{background: linear-gradient(90deg,var(--accent-2), rgba(10,60,90,0.85));}
+nav ul{display:flex;list-style:none;margin:0;padding:0;align-items:center}
+nav ul li{margin:0}
+nav ul li a{color:#fff;text-decoration:none;padding:12px 16px;display:block}
+nav ul li a:hover{background:rgba(255,255,255,0.06)}
+
+/* Tables and forms */
+table{border-collapse:collapse;width:100%;max-width:900px;margin:18px 0;background:rgba(255,255,255,0.92);border-radius:6px;overflow:hidden}
+th, td{padding:12px 16px;border-bottom:1px solid #e6eef2;color:#07323a}
+th{background:var(--accent-1);color:#fff;text-align:left}
+
+form{background:var(--card-bg);padding:18px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);max-width:640px}
+input, select{display:block;width:100%;padding:8px 10px;margin:8px 0;border:1px solid #d0e6ee;border-radius:6px}
+input[type="number"]{max-width:160px}
+label{font-weight:600;margin-top:6px}
+
+/* Buttons */
+input[type="submit"], input[type="button"]{background:var(--accent-1);color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer}
+input[type="submit"]:hover,input[type="button"]:hover{background:var(--accent-2)}
+
+/* Amount span styling */
+#vehicleamt,#stayamt{font-weight:700;margin-left:6px}
+
+/* Small screen adjustments */
+@media (max-width:700px){
+	.container{padding:18px}
+	table, form{width:100%}
+	nav ul{flex-wrap:wrap}
+}
+
+/* Accessibility fallbacks in case external images don't load */
+body.home, body.vehicles, body.stays{background-color:#dbeef6}
